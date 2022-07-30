@@ -1,4 +1,5 @@
 import Directory from "../../components/directory/directory.component";
+import React from "react";
 
 const Home = () => {
   const categories = [
@@ -20,6 +21,7 @@ const Home = () => {
       imageUrl: "https://i.ibb.co/pfH9gRF/shoes.webp",
     },
   ];
+
   return <Directory categories={categories} />;
 };
 
