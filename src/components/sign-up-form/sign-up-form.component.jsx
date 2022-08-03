@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./sign-up-form.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
+
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -18,9 +19,11 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
   const [formErrors, setFormErrors] = useState({});
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setFormErrors(validate(formFields));

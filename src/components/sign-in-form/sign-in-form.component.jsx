@@ -1,4 +1,8 @@
 import { useState } from "react";
+
+import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
+import { ReactComponent as GoogleLogo } from "../../assets/googleLogo.svg";
 import {
   signInWithGooglePopUp,
   createUserDocumentFromAuth,
@@ -6,9 +10,6 @@ import {
 } from "../../utils/firebase/firebase.utils";
 
 import "./sign-in-form.styles.scss";
-import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
-import { ReactComponent as GoogleLogo } from "../../assets/googleLogo.svg";
 
 const defaultFormFields = {
   email: "",
@@ -25,19 +26,15 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopUp();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopUp();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     setFormErrors(validate(formFields));
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-
+      await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
       // catch error code
@@ -102,7 +99,7 @@ const SignInForm = () => {
         <div className="buttons-container">
           <Button type="submit">Sign in</Button>
           <Button type="button" buttonType="google" onClick={signInWithGoogle}>
-            <GoogleLogo className="google-logo"></GoogleLogo>Sign in with google
+            <GoogleLogo className="google-logo"></GoogleLogo>Sign in with Google
           </Button>
         </div>
       </form>
