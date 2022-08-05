@@ -1,0 +1,25 @@
+.swiper-container {
+  margin: 2.4rem;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-repeat: no-repeat;
+  background-size: 3.6rem;
+  background-position: center;
+  transform: translateY(-50%);
+}
+.swiper-button-next {
+  background-image: url(../../assets/chevron-right.svg);
+  margin-right: 0.4rem;
+}
+
+.swiper-button-prev {
+  background-image: url(../../assets/chevron-left.svg);
+  margin-left: 0.4rem;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}

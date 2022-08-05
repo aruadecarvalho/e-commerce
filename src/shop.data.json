@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Brown Brim",
+    "imageUrl": "https://i.imgur.com/ADjIVzd.jpeg",
+    "price": 25
+  },
+  {
+    "id": 2,
+    "name": "Blue Beanie",
+    "imageUrl": "https://i.imgur.com/4xB3ftE.jpeg",
+    "price": 18
+  },
+  {
+    "id": 3,
+    "name": "Purple Grape",
+    "imageUrl": "https://i.imgur.com/9GYNOKT.jpeg",
+    "price": 35
+  },
+  {
+    "id": 4,
+    "name": "Grey Brim",
+    "imageUrl": "https://i.ibb.co/b5Lmpfj/DALL-E-2022-07-29-19-27-03-picture-of-a-cap-with-a-solid-light-color-background.png",
+    "price": 25
+  },
+  {
+    "id": 5,
+    "name": "Green Beanie",
+    "imageUrl": "https://i.imgur.com/6OZxaOK.jpeg",
+    "price": 18
+  },
+  {
+    "id": 6,
+    "name": "Palm Tree Cap",
+    "imageUrl": "https://i.imgur.com/7jIwBUR.jpeg",
+    "price": 14
+  },
+  {
+    "id": 7,
+    "name": "Red Beanie",
+    "imageUrl": "https://i.imgur.com/RcbYbRh.jpeg",
+    "price": 18
+  },
+  {
+    "id": 8,
+    "name": "Wolf Cap",
+    "imageUrl": "https://i.imgur.com/xIccML5.jpeg",
+    "price": 14
+  },
+  {
+    "id": 9,
+    "name": "Blue Snapback",
+    "imageUrl": "https://i.ibb.co/b5Lmpfj/DALL-E-2022-07-29-19-27-03-picture-of-a-cap-with-a-solid-light-color-background.png",
+    "price": 16
+  }
+]
