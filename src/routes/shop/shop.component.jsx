@@ -38,8 +38,8 @@ const Shop = () => {
         }}
       >
         <div className="products-container">
-          {products.map((product) => (
-            <SwiperSlide>
+          {products.map((product, id) => (
+            <SwiperSlide key={id}>
               <ProductCard key={product.id} product={product} />
             </SwiperSlide>
           ))}
