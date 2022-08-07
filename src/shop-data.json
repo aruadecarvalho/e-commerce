@@ -1,0 +1,179 @@
+[
+  {
+    "title": "Hats",
+    "items": [
+      {
+        "id": 1,
+        "name": "Brown Brim",
+        "imageUrl": "https://i.imgur.com/ADjIVzd.jpeg",
+        "price": 25
+      },
+      {
+        "id": 2,
+        "name": "Blue Beanie",
+        "imageUrl": "https://i.imgur.com/4xB3ftE.jpeg",
+        "price": 18
+      },
+      {
+        "id": 3,
+        "name": "Purple Grape",
+        "imageUrl": "https://i.imgur.com/9GYNOKT.jpeg",
+        "price": 35
+      },
+      {
+        "id": 4,
+        "name": "Grey Brim",
+        "imageUrl": "https://i.imgur.com/yhXi0v5.jpeg",
+        "price": 25
+      },
+      {
+        "id": 5,
+        "name": "Green Beanie",
+        "imageUrl": "https://i.imgur.com/6OZxaOK.jpeg",
+        "price": 18
+      },
+      {
+        "id": 6,
+        "name": "Palm Tree Cap",
+        "imageUrl": "https://i.imgur.com/7jIwBUR.jpeg",
+        "price": 14
+      },
+      {
+        "id": 7,
+        "name": "Red Beanie",
+        "imageUrl": "https://i.imgur.com/RcbYbRh.jpeg",
+        "price": 18
+      },
+      {
+        "id": 8,
+        "name": "Wolf Cap",
+        "imageUrl": "https://i.imgur.com/xIccML5.jpeg",
+        "price": 14
+      },
+      {
+        "id": 9,
+        "name": "Blue Snapback",
+        "imageUrl": "https://i.imgur.com/DehI7qL.jpeg",
+        "price": 16
+      }
+    ]
+  },
+  {
+    "title": "Sneakers",
+    "items": [
+      {
+        "id": 10,
+        "name": "Adidas NMD",
+        "imageUrl": "https://i.ibb.co/hHmkm7h/shoesnebula.webp",
+        "price": 220
+      },
+      {
+        "id": 11,
+        "name": "Adidas Yeezy",
+        "imageUrl": "https://i.ibb.co/9NsGLXZ/shoesred.webp",
+        "price": 280
+      },
+      {
+        "id": 12,
+        "name": "Black Converse",
+        "imageUrl": "https://i.ibb.co/H4H0w18/shoesholo.webp",
+        "price": 110
+      },
+      {
+        "id": 13,
+        "name": "Nike White AirForce",
+        "imageUrl": "https://i.ibb.co/BBpK1x9/shoewcyan.webp",
+        "price": 160
+      },
+      {
+        "id": 14,
+        "name": "Nike Red High Tops",
+        "imageUrl": "https://i.ibb.co/vjsQfdW/shoesneon.webp",
+        "price": 160
+      },
+      {
+        "id": 15,
+        "name": "Nike Brown High Tops",
+        "imageUrl": "https://i.ibb.co/NZXzMb4/shoesaqua.webp",
+        "price": 160
+      },
+      {
+        "id": 16,
+        "name": "Air Jordan Limited",
+        "imageUrl": "https://i.ibb.co/C7vXcHp/shoeswhite.webp",
+        "price": 190
+      },
+      {
+        "id": 17,
+        "name": "Timberlands",
+        "imageUrl": "https://i.ibb.co/mT1Vn5P/shoesblack.webp",
+        "price": 200
+      },
+      {
+        "id": 18,
+        "name": "White Max",
+        "imageUrl": "https://i.ibb.co/JqwcbNJ/shoes.webp",
+        "price": 230
+      }
+    ]
+  },
+  {
+    "title": "Clothes",
+    "items": [
+      {
+        "id": 19,
+        "name": "Black Jean Shearling",
+        "imageUrl": "https://i.imgur.com/8ZAYKO0.jpeg",
+        "price": 125
+      },
+      {
+        "id": 20,
+        "name": "Blue Jean Jacket",
+        "imageUrl": "https://i.imgur.com/m19Iupl.jpeg",
+        "price": 90
+      },
+      {
+        "id": 21,
+        "name": "Grey Jean Jacket",
+        "imageUrl": "https://i.imgur.com/gCodEZp.jpeg",
+        "price": 90
+      },
+      {
+        "id": 22,
+        "name": "Brown Shearling",
+        "imageUrl": "https://i.imgur.com/jGJS5fs.jpeg",
+        "price": 165
+      },
+      {
+        "id": 23,
+        "name": "Tan Trench",
+        "imageUrl": "https://i.imgur.com/ajyBWsj.jpeg",
+        "price": 185
+      },
+      {
+        "id": 24,
+        "name": "Pink Chock",
+        "imageUrl": "https://i.imgur.com/ajyBWsj.jpeg",
+        "price": 150
+      },
+      {
+        "id": 25,
+        "name": "Purple Grape",
+        "imageUrl": "https://i.imgur.com/Y8hPQ19.jpeg",
+        "price": 90
+      },
+      {
+        "id": 26,
+        "name": "Basic White",
+        "imageUrl": "https://i.imgur.com/3fUSiDs.jpeg",
+        "price": 70
+      },
+      {
+        "id": 27,
+        "name": "Orange",
+        "imageUrl": "https://i.imgur.com/AvbPGkl.jpeg",
+        "price": 110
+      }
+    ]
+  }
+]

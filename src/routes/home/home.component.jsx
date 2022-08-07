@@ -11,7 +11,7 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "Clothing",
+      title: "Clothes",
       imageUrl:
         "https://i.ibb.co/025mWhr/DALL-E-2022-07-29-19-20-06-image-of-a-t-shirt-with-a-solid-light-color-background.png",
     },
