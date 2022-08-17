@@ -1,15 +1,22 @@
 import { useState } from "react";
 
 import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
-import { ReactComponent as GoogleLogo } from "../../assets/googleLogo.svg";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+
 import {
   signInWithGooglePopUp,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
-import "./sign-in-form.styles.scss";
+import {
+  SignFormContainer,
+  ButtonContainer,
+  GoogleLogo,
+  SignFormTitle,
+  SignFormSpan,
+  FormInputContainer,
+  ErrorMessage,
+} from "./sign-in-form.styles.jsx";
 
 const defaultFormFields = {
   email: "",
@@ -71,11 +78,11 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
-      <h2>Already have an account?</h2>
-      <span>Sign in with your email and password</span>
-      <form className="form-container" onSubmit={handleSubmit}>
-        <div className="form-input-container">
+    <SignFormContainer>
+      <SignFormTitle>Already have an account?</SignFormTitle>
+      <SignFormSpan>Sign in with your email and password</SignFormSpan>
+      <form onSubmit={handleSubmit}>
+        <FormInputContainer>
           <FormInput
             label="Email"
             type="text"
@@ -83,10 +90,10 @@ const SignInForm = () => {
             name="email"
             value={email}
           />
-          <p className="error-message">{formErrors.emailError}</p>
-        </div>
+          <ErrorMessage>{formErrors.emailError}</ErrorMessage>
+        </FormInputContainer>
 
-        <div className="form-input-container">
+        <FormInputContainer>
           <FormInput
             label="Password"
             type="password"
@@ -94,16 +101,19 @@ const SignInForm = () => {
             name="password"
             value={password}
           />
-          <p className="error-message">{formErrors.passwordError}</p>
-        </div>
-        <div className="buttons-container">
+          <ErrorMessage>{formErrors.passwordError}</ErrorMessage>
+        </FormInputContainer>
+        <ButtonContainer>
           <Button type="submit">Sign in</Button>
-          <Button type="button" buttonType="google" onClick={signInWithGoogle}>
-            <GoogleLogo className="google-logo"></GoogleLogo>Sign in with Google
+          <Button
+            buttonType={BUTTON_TYPE_CLASSES.google}
+            onClick={signInWithGoogle}
+          >
+            <GoogleLogo></GoogleLogo>Sign in with Google
           </Button>
-        </div>
+        </ButtonContainer>
       </form>
-    </div>
+    </SignFormContainer>
   );
 };
 

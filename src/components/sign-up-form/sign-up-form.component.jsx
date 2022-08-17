@@ -1,5 +1,12 @@
 import { useState } from "react";
-import "./sign-up-form.styles.scss";
+import {} from "./sign-up-form.styles.jsx";
+import {
+  FormInputContainer,
+  ErrorMessage,
+  SignFormTitle,
+  SignFormSpan,
+  SignFormContainer,
+} from "../sign-in-form/sign-in-form.styles.jsx";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
@@ -80,11 +87,11 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
-      <h2>Don't have an account?</h2>
-      <span>Sign up with your email and password</span>
-      <form className="form-container" onSubmit={handleSubmit}>
-        <div className="form-input-container">
+    <SignFormContainer>
+      <SignFormTitle>Don't have an account?</SignFormTitle>
+      <SignFormSpan>Sign up with your email and password</SignFormSpan>
+      <form onSubmit={handleSubmit}>
+        <FormInputContainer>
           <FormInput
             label="Name"
             type="text"
@@ -92,9 +99,9 @@ const SignUpForm = () => {
             name="displayName"
             value={displayName}
           />
-          <p className="error-message">{formErrors.usernameError}</p>
-        </div>
-        <div className="form-input-container">
+          <ErrorMessage>{formErrors.usernameError}</ErrorMessage>
+        </FormInputContainer>
+        <FormInputContainer>
           <FormInput
             label="Email"
             type="text"
@@ -102,10 +109,10 @@ const SignUpForm = () => {
             name="email"
             value={email}
           />
-          <p className="error-message">{formErrors.emailError}</p>
-        </div>
+          <ErrorMessage>{formErrors.emailError}</ErrorMessage>
+        </FormInputContainer>
 
-        <div className="form-input-container">
+        <FormInputContainer>
           <FormInput
             label="Password"
             type="password"
@@ -113,9 +120,9 @@ const SignUpForm = () => {
             name="password"
             value={password}
           />
-          <p className="error-message">{formErrors.passwordError}</p>
-        </div>
-        <div className="form-input-container">
+          <ErrorMessage>{formErrors.passwordError}</ErrorMessage>
+        </FormInputContainer>
+        <FormInputContainer>
           <FormInput
             label="Confirm Password"
             type="password"
@@ -123,11 +130,11 @@ const SignUpForm = () => {
             name="confirmPassword"
             value={confirmPassword}
           />
-          <p className="error-message">{formErrors.confirmPasswordError}</p>
-        </div>
+          <ErrorMessage>{formErrors.confirmPasswordError}</ErrorMessage>
+        </FormInputContainer>
         <Button type="submit">Sign up</Button>
       </form>
-    </div>
+    </SignFormContainer>
   );
 };
 

@@ -1,22 +1,26 @@
 import ProductCard from "../product-card/product-card.component";
-import "./category-preview.styles.scss";
+import {
+  CategoryPreviewContainer,
+  Title,
+  SwiperContainer,
+} from "./category-preview.styles.jsx";
+import "./category-preview.slider.styles.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper";
 import { Link } from "react-router-dom";
+import { Fragment } from "react";
 const CategoryPreview = ({ title, products }) => {
   return (
-    <div className="category-preview-container">
+    <CategoryPreviewContainer>
       <h2>
         <Link to={`${title}`}>
-          <span className="title">
-            {title.charAt(0).toUpperCase() + title.slice(1)}
-          </span>
+          <Title>{title.charAt(0).toUpperCase() + title.slice(1)}</Title>
         </Link>
       </h2>
-      <div className="preview">
-        <div className="swiper-container">
+      <Fragment>
+        <SwiperContainer>
           <Swiper
             spaceBetween={36}
             breakpoints={{
@@ -50,9 +54,9 @@ const CategoryPreview = ({ title, products }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </div>
-    </div>
+        </SwiperContainer>
+      </Fragment>
+    </CategoryPreviewContainer>
   );
 };
 
