@@ -14,8 +14,8 @@ export const ImageContainer = styled.div`
   width: 23%;
   padding-right: 1.5rem;
   img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
   }
 `;
 
@@ -25,11 +25,13 @@ export const BaseSpan = styled.span`
 
 export const Quantity = styled(BaseSpan)`
   display: flex;
+  align-items: center;
 `;
 
 export const DecrementIncrementButton = styled.div`
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.6rem;
+  font-weight: 500;
 `;
 
 export const Value = styled.span`
@@ -39,4 +41,5 @@ export const Value = styled.span`
 export const RemoveButton = styled.div`
   padding-left: 1.2rem;
   cursor: pointer;
+  font-weight: bold;
 `;

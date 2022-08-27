@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper";
+import motion from "framer-motion";
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
 const CategoryPreview = ({ title, products }) => {
@@ -43,10 +44,10 @@ const CategoryPreview = ({ title, products }) => {
             loop={true}
             navigation={true}
             modules={[Autoplay, Navigation]}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 4000,
+            //   disableOnInteraction: false,
+            // }}
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { CartContext } from "../../contexts/cart.context";
-
+import { CartDropdownAnimation } from "../animations/animations.component";
 import {
   CartDropdownContainer,
   EmptyMessage,
@@ -21,17 +21,20 @@ const CartDropdown = () => {
     navigate("/checkout");
     setIsCartOpen(false);
   };
+
   return (
-    <CartDropdownContainer>
-      <CartItems>
-        {cartItems.length ? (
-          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
-        ) : (
-          <EmptyMessage>Your cart is empty</EmptyMessage>
-        )}
-      </CartItems>
-      <Button onClick={goToCheckoutHandler}>Go to checkout</Button>
-    </CartDropdownContainer>
+    <CartDropdownAnimation>
+      <CartDropdownContainer>
+        <CartItems>
+          {cartItems.length ? (
+            cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+          ) : (
+            <EmptyMessage>Your cart is empty</EmptyMessage>
+          )}
+        </CartItems>
+        <Button onClick={goToCheckoutHandler}>Go to checkout</Button>
+      </CartDropdownContainer>
+    </CartDropdownAnimation>
   );
 };
 

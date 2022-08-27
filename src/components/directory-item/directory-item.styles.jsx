@@ -40,7 +40,7 @@ export const DirectoryItemContainer = styled.div`
     cursor: pointer;
     & ${Body} {
       opacity: 0.9;
-      box-shadow: 2px 2px 0px 2px rgb(0, 0, 0, 0.05);
+      box-shadow: 2px 2px 0px 2px rgb(0, 0, 0, 0.1);
     }
   }
 

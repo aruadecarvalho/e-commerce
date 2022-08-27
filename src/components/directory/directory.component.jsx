@@ -1,4 +1,5 @@
 import { CategoriesContainer } from "./directory.styles.jsx";
+import { ComponentAnimation } from "../animations/animations.component.jsx";
 import DirectoryItem from "../directory-item/directory-item.component";
 import React from "react";
 const categories = [
@@ -27,11 +28,13 @@ const categories = [
 
 const Directory = () => {
   return (
-    <CategoriesContainer>
-      {categories.map((category) => (
-        <DirectoryItem key={category.id} category={category} />
-      ))}
-    </CategoriesContainer>
+    <ComponentAnimation>
+      <CategoriesContainer>
+        {categories.map((category) => (
+          <DirectoryItem key={category.id} category={category} />
+        ))}
+      </CategoriesContainer>
+    </ComponentAnimation>
   );
 };
 

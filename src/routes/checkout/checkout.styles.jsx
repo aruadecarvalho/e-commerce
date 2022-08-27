@@ -27,11 +27,12 @@ export const HeaderBlock = styled.div`
 
   span {
     font-size: 1.4rem;
+    opacity: 0.9;
   }
 `;
 
 export const Total = styled.span`
   margin-top: 3rem;
   margin-left: auto;
-  font-size: 3.2rem;
+  font-size: 2.8rem;
 `;
