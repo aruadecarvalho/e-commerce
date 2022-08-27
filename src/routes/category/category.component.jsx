@@ -7,6 +7,7 @@ import {
   CategoryTitle,
 } from "./category.styles.jsx";
 import ProductCard from "../../components/product-card/product-card.component";
+import { ComponentAnimation } from "../../components/animations/animations.component";
 const Category = () => {
   const { category } = useParams();
   const { categoriesMap } = useContext(CategoriesContext);
@@ -17,17 +18,19 @@ const Category = () => {
   }, [category, categoriesMap]);
 
   return (
-    <CategoryContainer>
-      <CategoryTitle>
-        {category.charAt(0).toUpperCase() + category.slice(1)}
-      </CategoryTitle>
-      <CategoryBody>
-        {products &&
-          products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-      </CategoryBody>
-    </CategoryContainer>
+    <ComponentAnimation>
+      <CategoryContainer>
+        <CategoryTitle>
+          {category.charAt(0).toUpperCase() + category.slice(1)}
+        </CategoryTitle>
+        <CategoryBody>
+          {products &&
+            products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+        </CategoryBody>
+      </CategoryContainer>
+    </ComponentAnimation>
   );
 };
 

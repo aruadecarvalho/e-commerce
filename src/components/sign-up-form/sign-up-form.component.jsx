@@ -14,7 +14,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-
+import { ComponentAnimation } from "../../components/animations/animations.component";
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -87,54 +87,56 @@ const SignUpForm = () => {
   };
 
   return (
-    <SignFormContainer>
-      <SignFormTitle>Don't have an account?</SignFormTitle>
-      <SignFormSpan>Sign up with your email and password</SignFormSpan>
-      <form onSubmit={handleSubmit}>
-        <FormInputContainer>
-          <FormInput
-            label="Name"
-            type="text"
-            onChange={handleChange}
-            name="displayName"
-            value={displayName}
-          />
-          <ErrorMessage>{formErrors.usernameError}</ErrorMessage>
-        </FormInputContainer>
-        <FormInputContainer>
-          <FormInput
-            label="Email"
-            type="text"
-            onChange={handleChange}
-            name="email"
-            value={email}
-          />
-          <ErrorMessage>{formErrors.emailError}</ErrorMessage>
-        </FormInputContainer>
+    <ComponentAnimation>
+      <SignFormContainer>
+        <SignFormTitle>Don't have an account?</SignFormTitle>
+        <SignFormSpan>Sign up with your email and password</SignFormSpan>
+        <form onSubmit={handleSubmit}>
+          <FormInputContainer>
+            <FormInput
+              label="Name"
+              type="text"
+              onChange={handleChange}
+              name="displayName"
+              value={displayName}
+            />
+            <ErrorMessage>{formErrors.usernameError}</ErrorMessage>
+          </FormInputContainer>
+          <FormInputContainer>
+            <FormInput
+              label="Email"
+              type="text"
+              onChange={handleChange}
+              name="email"
+              value={email}
+            />
+            <ErrorMessage>{formErrors.emailError}</ErrorMessage>
+          </FormInputContainer>
 
-        <FormInputContainer>
-          <FormInput
-            label="Password"
-            type="password"
-            onChange={handleChange}
-            name="password"
-            value={password}
-          />
-          <ErrorMessage>{formErrors.passwordError}</ErrorMessage>
-        </FormInputContainer>
-        <FormInputContainer>
-          <FormInput
-            label="Confirm Password"
-            type="password"
-            onChange={handleChange}
-            name="confirmPassword"
-            value={confirmPassword}
-          />
-          <ErrorMessage>{formErrors.confirmPasswordError}</ErrorMessage>
-        </FormInputContainer>
-        <Button type="submit">Sign up</Button>
-      </form>
-    </SignFormContainer>
+          <FormInputContainer>
+            <FormInput
+              label="Password"
+              type="password"
+              onChange={handleChange}
+              name="password"
+              value={password}
+            />
+            <ErrorMessage>{formErrors.passwordError}</ErrorMessage>
+          </FormInputContainer>
+          <FormInputContainer>
+            <FormInput
+              label="Confirm Password"
+              type="password"
+              onChange={handleChange}
+              name="confirmPassword"
+              value={confirmPassword}
+            />
+            <ErrorMessage>{formErrors.confirmPasswordError}</ErrorMessage>
+          </FormInputContainer>
+          <Button type="submit">Sign up</Button>
+        </form>
+      </SignFormContainer>
+    </ComponentAnimation>
   );
 };
 

@@ -17,7 +17,7 @@ import {
   FormInputContainer,
   ErrorMessage,
 } from "./sign-in-form.styles.jsx";
-
+import { ComponentAnimation } from "../../components/animations/animations.component";
 const defaultFormFields = {
   email: "",
   password: "",
@@ -78,42 +78,44 @@ const SignInForm = () => {
   };
 
   return (
-    <SignFormContainer>
-      <SignFormTitle>Already have an account?</SignFormTitle>
-      <SignFormSpan>Sign in with your email and password</SignFormSpan>
-      <form onSubmit={handleSubmit}>
-        <FormInputContainer>
-          <FormInput
-            label="Email"
-            type="text"
-            onChange={handleChange}
-            name="email"
-            value={email}
-          />
-          <ErrorMessage>{formErrors.emailError}</ErrorMessage>
-        </FormInputContainer>
+    <ComponentAnimation>
+      <SignFormContainer>
+        <SignFormTitle>Already have an account?</SignFormTitle>
+        <SignFormSpan>Sign in with your email and password</SignFormSpan>
+        <form onSubmit={handleSubmit}>
+          <FormInputContainer>
+            <FormInput
+              label="Email"
+              type="text"
+              onChange={handleChange}
+              name="email"
+              value={email}
+            />
+            <ErrorMessage>{formErrors.emailError}</ErrorMessage>
+          </FormInputContainer>
 
-        <FormInputContainer>
-          <FormInput
-            label="Password"
-            type="password"
-            onChange={handleChange}
-            name="password"
-            value={password}
-          />
-          <ErrorMessage>{formErrors.passwordError}</ErrorMessage>
-        </FormInputContainer>
-        <ButtonContainer>
-          <Button type="submit">Sign in</Button>
-          <Button
-            buttonType={BUTTON_TYPE_CLASSES.google}
-            onClick={signInWithGoogle}
-          >
-            <GoogleLogo></GoogleLogo>Sign in with Google
-          </Button>
-        </ButtonContainer>
-      </form>
-    </SignFormContainer>
+          <FormInputContainer>
+            <FormInput
+              label="Password"
+              type="password"
+              onChange={handleChange}
+              name="password"
+              value={password}
+            />
+            <ErrorMessage>{formErrors.passwordError}</ErrorMessage>
+          </FormInputContainer>
+          <ButtonContainer>
+            <Button type="submit">Sign in</Button>
+            <Button
+              buttonType={BUTTON_TYPE_CLASSES.google}
+              onClick={signInWithGoogle}
+            >
+              <GoogleLogo></GoogleLogo>Sign in with Google
+            </Button>
+          </ButtonContainer>
+        </form>
+      </SignFormContainer>
+    </ComponentAnimation>
   );
 };
 

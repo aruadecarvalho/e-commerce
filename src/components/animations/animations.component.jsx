@@ -4,6 +4,7 @@ import { forwardRef } from "react";
 export const ComponentAnimation = forwardRef(({ children, ...props }, ref) => {
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
       animate="visible"
       variants={{
@@ -15,10 +16,11 @@ export const ComponentAnimation = forwardRef(({ children, ...props }, ref) => {
           y: 0,
           opacity: 1,
           transition: {
-            delay: 0.125,
+            delay: 0.075,
           },
         },
       }}
+      {...props}
     >
       {children}
     </motion.div>
@@ -47,7 +49,7 @@ export const CartDropdownAnimation = forwardRef(
             position: "absolute",
             opacity: 1,
             transition: {
-              delay: 0.1,
+              delay: 0.075,
             },
           },
         }}
