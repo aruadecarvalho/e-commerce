@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import { ReactComponent as CartLogo } from "../../assets/cartLogo.svg";
 
 export const NavigationContainer = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 9;
   height: 7rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
   padding: 4rem 4.8rem;
   box-shadow: 0 1px 16px 1px rgb(0, 0, 0, 0.1);
 `;

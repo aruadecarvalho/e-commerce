@@ -9,14 +9,14 @@ export const ComponentAnimation = forwardRef(({ children, ...props }, ref) => {
       animate="visible"
       variants={{
         hidden: {
-          y: 25,
+          y: 10,
           opacity: 0,
         },
         visible: {
           y: 0,
           opacity: 1,
           transition: {
-            delay: 0.075,
+            delay: 0.05,
           },
         },
       }}

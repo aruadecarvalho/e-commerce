@@ -10,8 +10,8 @@ const CategoriesPreview = () => {
         Object.keys(categoriesMap).map((title) => {
           const products = categoriesMap[title];
           return (
-            <ComponentAnimation>
-              <CategoryPreview key={title} title={title} products={products} />
+            <ComponentAnimation key={title}>
+              <CategoryPreview title={title} products={products} />
             </ComponentAnimation>
           );
         })}

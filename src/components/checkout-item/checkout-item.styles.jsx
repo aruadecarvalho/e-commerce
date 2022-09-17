@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CheckoutItemContainer = styled.div`
   width: 100%;
   display: flex;
-  min-height: 10rem;
+  max-height: 15rem;
   border-bottom: 1px solid darkgrey;
   padding: 1.5rem 0;
   font-size: 2rem;
@@ -14,8 +14,8 @@ export const ImageContainer = styled.div`
   width: 23%;
   padding-right: 1.5rem;
   img {
-    width: 80%;
-    height: 80%;
+    aspect-ratio: 1;
+    max-width: 12rem;
   }
 `;
 

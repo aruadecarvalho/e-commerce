@@ -5,6 +5,9 @@ export const SignFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 38rem;
+  @media (max-width: 768px) {
+    width: 50rem;
+  }
 `;
 
 export const SignFormTitle = styled.h2`
