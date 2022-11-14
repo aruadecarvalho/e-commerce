@@ -25,17 +25,14 @@ const CategoryPreview = ({ title, products }) => {
           <Swiper
             spaceBetween={36}
             breakpoints={{
-              // when window width is >= 320px
               320: {
                 slidesPerView: 1,
                 spaceBetween: 20,
               },
-              // when window width is >= 480px
               480: {
                 slidesPerView: 2,
                 spaceBetween: 30,
               },
-              // when window width is >= 640px
               900: {
                 slidesPerView: 4,
                 spaceBetween: 40,
@@ -44,10 +41,6 @@ const CategoryPreview = ({ title, products }) => {
             loop={true}
             navigation={true}
             modules={[Autoplay, Navigation]}
-            // autoplay={{
-            //   delay: 4000,
-            //   disableOnInteraction: false,
-            // }}
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>
