@@ -13,6 +13,9 @@ export const CategoryBody = styled.div`
   @media (max-width: 60em) {
     grid-template-columns: repeat(2, 1fr);
   }
+  @media (max-width: 50em) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const CategoryTitle = styled.h2`

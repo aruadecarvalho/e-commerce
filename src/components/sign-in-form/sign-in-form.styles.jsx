@@ -5,8 +5,11 @@ export const SignFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 38rem;
-  @media (max-width: 768px) {
+  @media (max-width: 70em) {
     width: 50rem;
+  }
+  @media (max-width: 50em) {
+    width: 30rem;
   }
 `;
 

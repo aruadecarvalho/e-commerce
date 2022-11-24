@@ -8,6 +8,9 @@ export const CheckoutItemContainer = styled.div`
   padding: 1.5rem 0;
   font-size: 2rem;
   align-items: center;
+  @media (max-width: 50em) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -16,6 +19,11 @@ export const ImageContainer = styled.div`
   img {
     aspect-ratio: 1;
     max-width: 12rem;
+  }
+  @media (max-width: 50em) {
+    img {
+      width: 5rem;
+    }
   }
 `;
 
@@ -32,6 +40,9 @@ export const DecrementIncrementButton = styled.div`
   cursor: pointer;
   font-size: 2.6rem;
   font-weight: 500;
+  @media (max-width: 50em) {
+    font-size: 2rem;
+  }
 `;
 
 export const Value = styled.span`
