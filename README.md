@@ -1,6 +1,6 @@
 # E-commerce
 
-An E-commerce website build with React.js, Redux, Firebase and StyledComponents.Cancel changes
+An E-commerce website build with React.js, Redux, Firebase and StyledComponents.
 
 ## Demo
 
