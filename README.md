@@ -1,18 +1,18 @@
 # E-commerce
 
-An E-commerce website build with React.js, Redux, Firebase and StyledComponents.
+An E-commerce website built with React.js, Redux, Firebase and StyledComponents.
 
 ## Demo
 
 [E-commerce website](https://ecommerce-portifolio.netlify.app/)
 
-[Home](./readme%20imgs/home.png)
-[Shop](./readme%20imgs/shop.png)
-[Authentication](./readme%20imgs/authentication.png)
+![Home](./readme%20imgs/home.png)
+![Shop](./readme%20imgs/shop.png)
+![Authentication](./readme%20imgs/authentication.png)
 
 ## Lessons Learned
 
-This was my first project with Firebase, Redux, Redux Saga and Styled Components. It gave me a broader view of React.js architecture and how to think and structure a bigger application.
+This was my first project with Firebase, Redux, Redux Saga, Redux Persist, Redux Thunk and Styled Components. It gave me a broader view of React.js architecture and how to think and structure a bigger application.
 
 ## Appendix
 
