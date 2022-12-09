@@ -37,6 +37,10 @@ const CategoryPreview = ({ title, products }) => {
                 slidesPerView: 4,
                 spaceBetween: 40,
               },
+              1600: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+              },
             }}
             loop={true}
             navigation={true}
