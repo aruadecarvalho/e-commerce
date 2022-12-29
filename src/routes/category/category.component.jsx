@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import {
   selectCategoriesIsLoading,
   selectCategoriesMap,
-} from "../../store/categories/category.selector";
+} from "../../store/categories/category.selector.js";
 const Category = () => {
   const { category } = useParams();
   const isLoading = useSelector(selectCategoriesIsLoading);
