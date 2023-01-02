@@ -90,7 +90,7 @@ export type UserData = {
 
 export const createUserDocumentFromAuth = async (
   userAuth: User,
-  additionalInformation: AdditionalInformation
+  additionalInformation?: AdditionalInformation
 ): Promise<QueryDocumentSnapshot<UserData> | void> => {
   if (!userAuth) return;
 

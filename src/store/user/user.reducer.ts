@@ -1,5 +1,3 @@
-import { USER_ACTION_TYPES } from "./user.types";
-import { User } from "firebase/auth";
 import { UserData } from "../../utils/firebase/firebase.utils";
 import { AnyAction } from "redux";
 import {

@@ -5,7 +5,7 @@ import { ComponentAnimation } from "../../components/animations/animations.compo
 import {
   selectCategoriesIsLoading,
   selectCategoriesMap,
-} from "../../store/categories/category.selector.js";
+} from "../../store/categories/category.selector";
 import Spinner from "../../components/spinner/spinner.component";
 const CategoriesPreview = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
