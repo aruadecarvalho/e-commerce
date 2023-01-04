@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUpStart } from "../../store/user/user.action";
-import {} from "./sign-up-form.styles.jsx";
 import {
   FormInputContainer,
   ErrorMessage,
   SignFormTitle,
   SignFormSpan,
   SignFormContainer,
-} from "../sign-in-form/sign-in-form.styles.jsx";
+} from "../sign-in-form/sign-in-form.styles";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
-import { ComponentAnimation } from "../../components/animations/animations.component";
+import { ComponentAnimation } from "../animations/animations.component";
+import {
+  ErrorsSignIn,
+  FormFieldsSignIn,
+} from "../sign-in-form/sign-in-form.component";
+import { AuthError, AuthErrorCodes } from "firebase/auth";
+
+type FormFieldsSignUp = {
+  displayName: string;
+  confirmPassword: string;
+} & FormFieldsSignIn;
+
+type ErrorsSignUp = {
+  usernameError?: string;
+  confirmPasswordError?: string;
+} & ErrorsSignIn;
+
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -21,15 +36,16 @@ const defaultFormFields = {
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const [formFields, setFormFields] =
+    useState<FormFieldsSignUp>(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<ErrorsSignUp>({});
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormErrors(validate(formFields));
     if (password !== confirmPassword) {
@@ -40,8 +56,8 @@ const SignUpForm = () => {
       resetFormFields();
     } catch (error) {
       // catch error code
-      switch (error.code) {
-        case "email-already-in-use":
+      switch ((error as AuthError).code) {
+        case AuthErrorCodes.EMAIL_EXISTS:
           setFormErrors({ ...formErrors, emailError: "Email already in use" });
           break;
         default:
@@ -50,8 +66,8 @@ const SignUpForm = () => {
     }
   };
 
-  const validate = (values) => {
-    const errors = {};
+  const validate = (values: FormFieldsSignUp) => {
+    const errors: ErrorsSignUp = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.displayName) {
       errors.usernameError = "Username is required!";
@@ -74,7 +90,7 @@ const SignUpForm = () => {
     return errors;
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };

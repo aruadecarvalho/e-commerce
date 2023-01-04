@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, FormEvent, ChangeEvent } from "react";
+import { AuthError, AuthErrorCodes } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
@@ -16,8 +17,18 @@ import {
   SignFormSpan,
   FormInputContainer,
   ErrorMessage,
-} from "./sign-in-form.styles.jsx";
-import { ComponentAnimation } from "../../components/animations/animations.component";
+} from "./sign-in-form.styles";
+import { ComponentAnimation } from "../animations/animations.component";
+
+export type FormFieldsSignIn = {
+  email: string;
+  password: string;
+};
+
+export type ErrorsSignIn = {
+  emailError?: string;
+  passwordError?: string;
+};
 const defaultFormFields = {
   email: "",
   password: "",
@@ -25,9 +36,10 @@ const defaultFormFields = {
 
 const SignInForm = () => {
   const dispatch = useDispatch();
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const [formFields, setFormFields] =
+    useState<FormFieldsSignIn>(defaultFormFields);
   const { email, password } = formFields;
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<ErrorsSignIn>({});
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -37,7 +49,7 @@ const SignInForm = () => {
     dispatch(googleSignInStart());
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormErrors(validate(formFields));
     try {
@@ -45,11 +57,12 @@ const SignInForm = () => {
       resetFormFields();
     } catch (error) {
       // catch error code
-      switch (error.code) {
-        case "auth/wrong-password":
+      const errorCode = (error as AuthError).code;
+      switch (errorCode) {
+        case AuthErrorCodes.INVALID_PASSWORD:
           setFormErrors({ ...formErrors, passwordError: "Incorrect password" });
           break;
-        case "auth/user-not-found":
+        case AuthErrorCodes.USER_DELETED:
           setFormErrors({ ...formErrors, emailError: "User not found" });
           break;
         default:
@@ -58,8 +71,8 @@ const SignInForm = () => {
     }
   };
 
-  const validate = (values) => {
-    const errors = {};
+  const validate = (values: FormFieldsSignIn) => {
+    const errors: ErrorsSignIn = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.email) {
       errors.emailError = "Email is required!";
@@ -72,7 +85,7 @@ const SignInForm = () => {
     return errors;
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
