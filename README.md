@@ -1,6 +1,6 @@
 # E-commerce
 
-An E-commerce website built with React.js, Redux, Firebase and StyledComponents.
+An E-commerce website built with React.js, Redux, Firebase, StyledComponents and Typescript.
 
 ## Demo
 
@@ -12,7 +12,7 @@ An E-commerce website built with React.js, Redux, Firebase and StyledComponents.
 
 ## Lessons Learned
 
-This was my first project with Firebase, Redux, Redux Saga, Redux Persist, Redux Thunk and Styled Components. It gave me a broader view of React.js architecture and how to think and structure a bigger application.
+This was my first project with Firebase, Redux, Redux Saga, Redux Persist, Redux Thunk, Styled Components and Typescript. It gave me a broader view of React.js architecture and how to think and structure a bigger application.
 
 ## Appendix
 
