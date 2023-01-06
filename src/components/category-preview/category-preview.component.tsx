@@ -3,16 +3,22 @@ import {
   CategoryPreviewContainer,
   Title,
   SwiperContainer,
-} from "./category-preview.styles.jsx";
+} from "./category-preview.styles";
 import "./category-preview.slider.styles.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper";
-import motion from "framer-motion";
 import { Link } from "react-router-dom";
-import { Fragment } from "react";
-const CategoryPreview = ({ title, products }) => {
+import { FC, Fragment } from "react";
+import { CategoryItem } from "../../store/categories/category.types";
+
+type CategoryPreviewPros = {
+  title: string;
+  products: CategoryItem[];
+};
+
+const CategoryPreview: FC<CategoryPreviewPros> = ({ title, products }) => {
   return (
     <CategoryPreviewContainer>
       <h2>

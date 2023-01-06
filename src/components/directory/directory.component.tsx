@@ -1,8 +1,15 @@
-import { CategoriesContainer } from "./directory.styles.jsx";
+import { CategoriesContainer } from "./directory.styles";
 import { ComponentAnimation } from "../animations/animations.component";
 import DirectoryItem from "../directory-item/directory-item.component";
-import React from "react";
-const categories = [
+
+export type Category = {
+  id: number;
+  title: string;
+  imageUrl: string;
+  route: string;
+};
+
+const categories: Category[] = [
   {
     id: 1,
     title: "Hats",

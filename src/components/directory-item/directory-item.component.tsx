@@ -3,9 +3,15 @@ import {
   BackgroundImage,
   DirectoryItemContainer,
   Body,
-} from "./directory-item.styles.jsx";
-import React from "react";
-const DirectoryItem = ({ category }) => {
+} from "./directory-item.styles";
+import { Category } from "../directory/directory.component.js";
+import { FC } from "react";
+
+type DirectoryItemProps = {
+  category: Category;
+};
+
+const DirectoryItem: FC<DirectoryItemProps> = ({ category }) => {
   const { imageUrl, title, route } = category;
   const navigate = useNavigate();
 

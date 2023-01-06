@@ -6,10 +6,16 @@ import {
   Footer,
   NameSpan,
   PriceSpan,
-} from "./product-card.styles.jsx";
+} from "./product-card.styles";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import { FC } from "react";
+import { CategoryItem } from "../../store/categories/category.types";
 
-const ProductCard = ({ product }) => {
+type ProductCartProps = {
+  product: CategoryItem;
+};
+
+const ProductCard: FC<ProductCartProps> = ({ product }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const { name, price, imageUrl } = product;

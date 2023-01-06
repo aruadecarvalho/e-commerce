@@ -4,7 +4,7 @@ import {
   CategoryBody,
   CategoryContainer,
   CategoryTitle,
-} from "./category.styles.jsx";
+} from "./category.styles";
 import ProductCard from "../../components/product-card/product-card.component";
 import Spinner from "../../components/spinner/spinner.component";
 import { ComponentAnimation } from "../../components/animations/animations.component";
@@ -13,11 +13,18 @@ import {
   selectCategoriesIsLoading,
   selectCategoriesMap,
 } from "../../store/categories/category.selector";
+
+type CategoryRouteParams = {
+  category: string;
+};
+
 const Category = () => {
-  const { category } = useParams();
+  const { category } = useParams<
+    keyof CategoryRouteParams
+  >() as CategoryRouteParams;
   const isLoading = useSelector(selectCategoriesIsLoading);
   const categoriesMap = useSelector(selectCategoriesMap);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
     setProducts(categoriesMap[category]);
