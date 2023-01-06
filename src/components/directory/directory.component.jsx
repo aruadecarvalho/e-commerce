@@ -1,5 +1,5 @@
 import { CategoriesContainer } from "./directory.styles.jsx";
-import { ComponentAnimation } from "../animations/animations.component.jsx";
+import { ComponentAnimation } from "../animations/animations.component";
 import DirectoryItem from "../directory-item/directory-item.component";
 import React from "react";
 const categories = [
